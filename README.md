@@ -1,6 +1,6 @@
 # COLOCOLA - COsmoLOgical parameter estimation with a COnstant LAtitude mask
 
-This code reproduces the Python results in Eskilt et al. (2023) where the cosmological parameters of the CMB are sampled from a simulated map with an applied constant latitude mask. We derive the full inverse noise covariance matrix in Appendix A of Eskilt et al. (2023), allowing for fast and accurate sampling of a large N_side map.
+This code reproduces the Python results in Eskilt et al. (2023) where the cosmological parameters of the CMB are sampled from a simulated map with an applied constant latitude mask. We derive the full inverse noise covariance matrix in Appendix A of Eskilt et al. (2023), allowing for relatively fast sampling of large N_side maps.
 
 # How Do I Run It?
 
