@@ -6,7 +6,9 @@ This code reproduces the Python results in Eskilt et al. (2023) where the cosmol
 
 First, you make the simulations by running the file `make_simulations/mak_sim_512.py`, which creates a map file in that folder. Then you run `start_sampler.py` which samples the 6 LCDM parameters with no applied masks. This should be relatively quick. And you can change the parameters in `start_sampler.py` to your likening. Outputted plots and figures are made to a folder named `plot_folder_nside512`.
 
-Then you can apply a constant latitude mask by changing the `mask_latitude_rad` parameter in `start_sampler.py`. This will be much slower, and you should use a previous run without a mask to create the proposal covariance matrix for the cosmological parameters. This can be done by changing the filename ending of the outputted chain file from `..._current_chain.npy` to `..._previous_chain.npy`.
+To have a more efficient run, you should use a previous chain file which creates an optimal proposal matrix for the cosmological parameters. Do a run with a suboptimal diagonal covariance matrix (by running the code as it is). Then you change the outputted chain file name to  hen change the name of the `..._current_chain.npy` to `..._previous_chain.npy` and then set `prev_chain = True` in `start_sampler.py`. Then run the code again. You will need to tune the `proposal_step` parameter to get an optimal acceptance rate of ~23%.
+
+Then you can apply a constant latitude mask by changing the `mask_latitude_rad` parameter in `start_sampler.py`. This will be much slower, and you should use a previous chain file from the run without a mask to create the proposal covariance matrix for the cosmological parameters.
 
 ## Is something not working?
 Please let me know if you run into any problems or if anything is unclear!
